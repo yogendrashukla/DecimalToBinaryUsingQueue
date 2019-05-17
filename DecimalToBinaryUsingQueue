@@ -1,0 +1,22 @@
+import queue
+
+que = queue.Queue()
+m = int(input('Enter a number : '))
+n = m // 2  # Because there is two time element gets generated
+que.put('1')
+while n is not 0:
+    s1 = que.get()
+    print(s1)
+    s2 = s1 + '0'
+    que.put(s2)
+    s3 = s1 + '1'
+    que.put(s3)
+    n -= 1
+    m -= 1
+# print('----------Remainig element in queue after above loop--------------')
+while (not que.empty()) and (m is not 0):
+    print(que.get())
+    # print(k)
+    m -= 1
+# print('-------one element will be remained you enter the even no.--------')
+# print(que.qsize())
